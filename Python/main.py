@@ -128,10 +128,125 @@
 
 # print("Enter your name "
 #       "and your last name")
-print(f"{1234 * 10: ,d}")
+# print(f"{1234 * 10: ,d}")
 
-print(f"{1234 / 10: .2f}")
+# print(f"{1234 / 10: .2f}")
 
-print(f"{123467: ,.2f}")
+# print(f"{123467: ,.2f}")
 
-print(f"{.75: .0%}")
+# print(f"{.75: .0%}")
+"""String"""
+# msg="It\'s a sunny day"     #escape sequence
+# print(msg)
+# print("'" in msg)
+# print('"' in msg)
+# print(len(msg))
+# print(msg[-5])
+
+# name=input("Enter your name: ")
+# age=int(input("Enter your age: "))
+# print(f"Hello, my name is {name} and I am {age} years old.")
+
+# print(True and True or False)
+# x=45
+# # if x>20 and x<40:
+# #     print("Inside")
+
+# print("Inside") if x>20 and x<40 else print("Not inside")
+
+# grade=int(input("Enter your score"))
+# print("Pass") if grade>59 else print("Fail")
+
+
+# num1=int(input("Enter the first number"))
+# num2=int(input("Enter the seconde number"))
+# max=num1 if num1>num2 else num2
+# print(f"The bigger number is {max}")
+
+# temp=int(input("Enter the temprature"))
+# status="Hot" if temp>60 else "Cold"
+# print(f"It is {status}")
+
+# speed=int(input("Enter a number"))
+# status="The number is within range" if speed>0 and speed<100 else "The number is not within range"
+# print(status)
+
+# print("the amount of"
+#       "sales for each day"
+#       "press enter")
+
+
+# print("one", end=' ')
+# print("two", end=' ')
+# print("three")
+
+# print("one", "two", "Three", sep=",")
+# print("one\ttwo\tthree")
+
+# name = "John"
+# print("Hello", name)
+# print("Hello {name}")
+# print(f"Hello {name}")
+# print("Hello " + name)
+# print('1' + 2)
+# amount=5000123.034
+# month_pay=amount/12.0
+# print(f"the monthly payment is: {month_pay: .2f}")
+
+# print(f"{amount: ,.2f}")
+
+# discount=0.4
+# print(f"{discount: .2%}")
+
+# print(f"{1234 * 10: ,d}")
+
+# print(f"{1234 / 10: .2f}")
+
+# print(f"{123467: ,.2f}")
+
+# print(f"{.75: .0%}")
+
+
+# value = 900
+# print(value)
+# print("value")
+# print(value+100)
+# print(f"{value+100}")
+# # print("The value is: "+value)
+# print("The value is: {value}")
+# print(f"The value is: {value}")
+
+# for item in [1,2,3]:
+#     print(item)
+
+# for number in range(1,11):
+#     print(f"{number} \t {number**2}")
+
+# days=int(input("Enter days"))
+# tatal=0
+# for days in range(1,7):
+#     sale=int(input("Enter the sales"))
+#     total=day+sale
+
+# age=int(input("Enter age: "))
+
+# total=0
+# for count in range(1,4):
+#     grade=int(input(f"Enter Grade for student {count}: "))
+#     while grade >0:
+#         print("ERROR! Grade must be positive")
+#     total=total+grade
+# average =total/10
+# print("Average: ", average)
+
+
+factorial=1
+n=int(input("Enter a positive number: "))
+while n<=0:
+    print("ERROR! Number must be greater than zero")
+else:
+    for i in range(1,n+1):
+        factorial=factorial*i
+        n+=1
+    print(f"{i}! is {factorial}")
+
