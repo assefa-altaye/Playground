@@ -135,6 +135,7 @@
 # print(f"{123467: ,.2f}")
 
 # print(f"{.75: .0%}")
+
 """String"""
 # msg="It\'s a sunny day"     #escape sequence
 # print(msg)
@@ -240,13 +241,135 @@
 # print("Average: ", average)
 
 
-factorial=1
-n=int(input("Enter a positive number: "))
-while n<=0:
-    print("ERROR! Number must be greater than zero")
-else:
-    for i in range(1,n+1):
-        factorial=factorial*i
-        n+=1
-    print(f"{i}! is {factorial}")
+# factorial=1
+# n=int(input("Enter a positive number: "))
+# while n<=0:
+#     print("ERROR! Number must be greater than zero")
+# else:
+#     for i in range(1,n+1):
+#         factorial=factorial*i
+#         n+=1
+#     print(f"{i}! is {factorial}")
+
+
+#################################Vote
+# total_tichen=0
+# total_oraton=0
+
+# vote=int(input("Enter your vote: "))
+# while(vote != -1):
+#     if(vote==1):
+#         total_tichen+=1
+#     elif(vote==2):
+#         total_oraton+=1
+#     else:
+#         print("Unrecognized character")
+#     # vote+=1
+#     vote=int(input("Enter your vote: "))
+# # print(f"tichen vote: {total_tichen}" )
+# # print(f"Orator vote: {total_oraton}" )
+# total_vote=total_tichen+total_oraton
+
+# print("-------------")
+# print(f"Totla number of votes: {total_vote}")
+# tichen_percent=(total_tichen/total_vote)
+# oraton_percent=(total_oraton/total_vote)
+# # print(f"Tichen Percent:\t {tichen_percent}")
+# print(f"Tichen: \t{total_tichen} ({tichen_percent:.0%})")
+# print(f"Oraton: \t{total_oraton} ({oraton_percent:.0%})")
+# if(tichen_percent==oraton_percent):
+#     print("It is a tie!")
+###############################Vote 
+
+# for row in range(5): 
+#     print(f"Row#{row}:",end="\t")
+#     for col in range(6):
+#         print(col,end="\t") 
+#     print()
+
+
+
+# num_rows = int(input("Enter number of rows: "))
+# for row in range(num_rows+1):
+#     for col in range(row):
+#         print(" ",end="")
+#     print("#")
+
+##################Electricity consumption
+# usage=0
+# total=0
+# count=0
+# usage=int(input(f"Electricity month #{count+1}:"))
+# while count<5:
+#     usage=int(input(f"Electricity month #{count+1}:"))
+#     while usage <-1:
+#         print("ERROR! Electricity Consumption cannot be negative ")
+#         usage=int(input(f"Electricity month #{count+1}:"))
+# total=total+usage
+# count=count + 1
+# average=total/count
+# print(total)
+# print(average)
+
+# # total=0
+# average=0
+# for count in range(1,6):
+#     usage=int(input(f"Electricity month #{count}:"))
+#     if usage<0:
+#         print("ERROR! Electricity Consumption cannot be negative ")
+#         usage=int(input(f"Electricity month #{count}:"))
+#     total=total+usage
+#     average=total/5
+
+# print(total)
+# print(average)
+
+
+#This program analyze monthly electricity consumption 
+#Calculates total average and maximum consumption
+
+######################week 7 activity 1.1
+# for count in range (1,6):
+#     usage=int(input(f"Electricity consumption for month#{count}:"))
+    
+#     if usage <0:# Cehck for negative number
+#         print("ERROR! Electricity consumption cannot be negative")
+#         usage=int(input(f"Electricity consumption for month#{count}:"))
+#     total=total+usage
+#     average=total//5
+
+# #print the result
+# print("---------------------------")
+# print(f"Total consumption: {total} kWh")
+# print(f"Average consumption: {average} kWh")
+
+
+
+# #####################week 7 activity 1.2
+#This program analyze monthly electricity consumption 
+#Calculates total average and maximum consumption
+
+# total =0
+# month=0
+
+# usage=int(input(f"Electricity consumption for month #{month} (enter -1 end): "))
+
+# while usage != -1:
+    
+#     while usage<-1: #check for negative number
+#         print("ERROR! Electricity consumption cannot be negative")
+#         usage=int(input(f"Electricity consumption for month #{month + 1} (enter -1 end): "))
+     
+#     total =total + usage #Calculate total
+#     month+=1
+#     usage=int(input(f"Electricity consumption for month #{month + 1} (enter -1 end): "))
+    
+#     average=total//month #Calculate average
+
+# #Print the result  
+# print("-------------------------------")
+# print(f"Months: {month}")
+# print(f"Total consumption: {total} kWh")
+# print(f"Average consumption: {average} kWh")
+
 
