@@ -373,3 +373,51 @@
 # print(f"Average consumption: {average} kWh")
 
 
+#########################
+
+#This program analyze monthly electricity consumption 
+#The program prints:
+#The number of months
+#The total, maximum and average usage
+#Number of months with low/high consumption 
+
+total =0
+month=0
+maximum=0
+high_consumption=0
+low_consumption=0
+
+usage=int(input(f"Electricity consumption for month #{month} (enter -1 end): "))
+
+while usage != -1:
+    
+    while usage<-1: #check for negative number
+        print("ERROR! Electricity consumption cannot be negative")
+        usage=int(input(f"Electricity consumption for month #{month + 1} (enter -1 end): "))
+     
+    total =total + usage #Calculate total
+    month+=1
+    
+    #Find if usage is maximum
+    if usage > maximum: 
+        maximum = usage
+    
+    #count high and low consumption months    
+    if usage > 700:
+        high_consumption+=1
+    elif usage < 300:
+        low_consumption+=1
+    usage=int(input(f"Electricity consumption for month #{month + 1} (enter -1 end): "))
+    
+    average=total/month #Calculate average
+
+    
+
+#Print the result  
+print("-------------------------------")
+print(f"Months: {month}")
+print(f"Max consumption: {maximum}")
+print(f"Total consumption: {total} kWh")
+print(f"Average consumption: {average:.2f} kWh")
+print(f"Num high consumption months: {high_consumption}")
+print(f"Num low consumption months: {low_consumption}")
