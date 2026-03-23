@@ -8,8 +8,6 @@
 #print('Hook \'em horns!')
 
 
-# name=input("Enter your name: ")
-# print("Hello, ", name)
 
 # length=8
 # width=5
