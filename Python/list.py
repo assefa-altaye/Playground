@@ -259,15 +259,97 @@
 # print(num)
 
 
-scores = [0]*10
-for n in range(0,10):
-    score = int(input(f"Score for student #{n}? "))
-    scores[n] = score
+# scores = [0]*10
+# for n in range(0,10):
+#     score = int(input(f"Score for student #{n}? "))
+#     scores[n] = score
 
-print(scores)
+# print(scores)
 
-search_num =int(input("Enter the number to search:"))
-if search_num in scores:
-    print(f"{search_num} is in the list")
-else:
-    print(f"{search_num} is not in the list")
+# search_num =int(input("Enter the number to search:"))
+# if search_num in scores:
+#     print(f"{search_num} is in the list")
+# else:
+#     print(f"{search_num} is not in the list")
+
+
+
+#This program reads prices and print statistics 
+
+
+#Read prices and return prices list   
+def read_prices(num_prices):
+    prices=[0]*num_prices
+    for n in range(0, num_prices):
+        prices[n]= int(input(f"Prices for item #{n+1}? "))
+    return prices
+    
+#function to calculate and return average of numbers in the list
+def get_average(numbers):
+    total=0
+    for n in numbers:
+        total +=n
+    average = total / len(numbers)
+    return average
+    
+
+#function to get maximum value in the list
+def get_maximum(numbers):
+    maximum = numbers[0]
+    for n in numbers:
+        if n > maximum:
+            maximum = n
+    return maximum
+    
+#function to get minimum value in the list
+def get_minimum(numbers):
+    minimum = numbers[0]
+    for n in numbers:
+        if n < minimum:
+            minimum = n
+    return minimum
+    
+#function to get price of a given number in the list
+def get_item_price(prices, item_number):
+    if item_number < 1 or item_number >len(prices):
+        return -1
+    return prices[item_number-1]
+    
+
+#function to get the count of expensive items above average
+def get_count_expensive(item_prices):
+    avg =get_average(item_prices)
+    count=0
+    
+    for price in item_prices:
+        if price > avg:
+            count +=1
+    return count
+
+def main():
+    item_size=int(input("How many items? "))
+    
+    #Calling functions to get results
+    item_prices=read_prices(item_size)
+    
+    print(item_prices)
+    
+    avg =get_average(item_prices)
+    maximum = get_maximum(item_prices)
+    minimum = get_minimum(item_prices)
+    price_range = maximum - minimum
+    
+    #Print the results
+    print(f"Average price: {avg}")
+    print(f"Maximum price: {maximum}")
+    print(f"Minimum price: {minimum}")
+    print(f"Range of prices: {price_range}")
+    
+    item_num=int(input("Enter item number: "))
+    price= get_item_price(item_prices, item_num)
+    print(f"Item #{item_num} price: {price}")
+    
+    count_expensive = get_count_expensive(item_prices)
+    print(f"Count expensive: {count_expensive}")
+
+main()

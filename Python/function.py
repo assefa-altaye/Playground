@@ -74,8 +74,11 @@
 #############Week 8 Lab 
 #This function accepts three exam score results and returns grade later and average
 
-#define function to get a letter grade
+# #define function to get a letter grade
 # def get_letter_grade(exam_score):
+#     while exam_score< 0:
+#         print("ERROR! Score cannot be negative.")
+
 #     if exam_score<0:
 #         print("ERROR! Score cannot be negative.")
 #     elif exam_score>100:
@@ -106,25 +109,25 @@
 #     print(f"Average: {get_average(score1, score2, score3)}")        
 # main()
 
+#############
 
 
+# def calculate_pay(hourly_pay, hours_worked):
+#     if hours_worked <=20:
+#         return hourly_pay * hours_worked
+#     else:
+#         regular_pay=hourly_pay * 20
+#         overtime_hours= hours_worked -20
+#         overtime_pay= overtime_hours*hourly_pay*1.5
+#         return regular_pay + overtime_pay
 
-
-def calculate_pay(hourly_pay, hours_worked):
-    if hours_worked <=20:
-        return hourly_pay * hours_worked
-    else:
-        regular_pay=hourly_pay * 20
-        overtime_hours= hours_worked -20
-        overtime_pay= overtime_hours*hourly_pay*1.5
-        return regular_pay + overtime_pay
-
-def main():
-    hourly_pay= float(input("Enter Hourly pay? $"))
-    hours_worked=float(input("Enter hours? "))
+# def main():
+#     hourly_pay= float(input("Enter Hourly pay? $"))
+#     hours_worked=float(input("Enter hours? "))
     
-    gross_pay=calculate_pay(hourly_pay, hours_worked)
+#     gross_pay=calculate_pay(hourly_pay, hours_worked)
     
-    print(f"Payment: ${gross_pay: .2f}")
+#     print(f"Payment: ${gross_pay: .2f}")
 
-main ()
+# main ()
+
