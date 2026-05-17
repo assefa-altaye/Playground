@@ -881,3 +881,215 @@ withdraw_count = 0
 
 # show_value()
 # print(my_value)
+
+
+# my_string = "Hello there!"
+
+# count = 0
+# for ch in my_string:
+#     print(ch)
+#     ch = "X"
+
+# print(my_string)
+
+
+
+
+# input_text = input("Enter text: ")
+
+# vowel_count = 0
+
+# input_text = input_text.lower()
+
+# for ch in input_text:
+#     if ch == 'a' or ch == 'e' or ch == 'i' or ch == 'o' or ch == 'u':
+#         vowel_count += 1
+
+# print(input_text)
+# print("Count vowels: ", vowel_count)
+
+# def count_prounouns(input_text):
+
+#     prounoun_count = 0
+#     prounouns=['he', 'she', 'we', 'it', 'they', 'you']
+#     words = input_text.lower().split()
+
+
+#     for i in words:
+#         word=i.strip()
+#         if word in prounouns:
+#             prounoun_count += 1
+#     return prounoun_count
+
+#     print(input_text)
+#     print("Count vowels: ", prounoun_count)
+
+# def main():
+#     text=input("Enter text: ")
+#     count=count_prounouns(text)
+#     print(f"Count prounoune: {count}")
+# main()
+
+
+# def remove_punctuations(text):
+#     punctuations=[':', ',', ';', '.']
+    
+#     for ch in punctuations:
+#         text=text.replace(ch, ' ')
+
+#     return text
+
+
+# def main():
+#     input_text=input("Enter text: ")
+#     output_text=remove_punctuations(input_text)
+#     print(f"Text without punctuation: {output_text}")
+# main()
+
+# def get_exam_score():
+#     score = int(input("Exam score?: "))
+# 	  #input validation
+#     while score < 0:
+#         print("ERROR! Score cannot be negative")
+#         score = int(input("Exam score?: "))
+    
+#     return score
+
+
+# ###############
+# #This function accepts three exam score results and returns grade later and average
+
+# #define function to get a letter grade
+# def get_letter_grade(exam_score):
+#     if exam_score<0:
+#         print("ERROR! Score cannot be negative.")
+#     elif exam_score>100:
+#         print("ERROR! Score cannot be greater than 100")
+#     elif exam_score>=90:
+#         print(f"Score: {exam_score}, Letter grade: A")
+#     elif exam_score>=80:
+#         print(f"Score: {exam_score}, Letter grade: B")
+#     elif exam_score>=70:
+#         print(f"Score: {exam_score}, Letter grade: C")
+#     elif exam_score>=60:
+#         print(f"Score: {exam_score}, Letter grade: D")
+#     else:
+#         print(f"Score: {exam_score}, Letter grade: F")
+        
+# #define function to get average
+# def get_average(score1, score2, score3):
+#     return (score1 + score2 + score3)/3
+
+# #define the main function    
+# def main():
+#     score1=float(input("First exam score? "))
+#     score2=float(input("Second exam score? "))
+#     score3=float(input("Third exam score? "))
+#     get_letter_grade(score1)
+#     get_letter_grade(score2)
+#     get_letter_grade(score3)
+#     print(f"Average: {get_average(score1, score2, score3)}")        
+# main()
+
+# count=1
+# while count<3:
+#     print(count)
+#     count+=1
+
+# count = 1
+# while count <= 10:
+# 	count = count * 2
+# print(count)
+# start=int(input("Enter Start: "))
+# end=int(input("Enter end: "))
+# step=int(input("Enter step: "))
+# print("Number\tSquare")
+# for num in range(start,end+1,step):
+#     square=num**2
+#     print(f"{num}\t{square}")
+
+# counter=1
+# while counter<=5:
+#     print(counter)
+#     counter+=1
+
+
+# food=input("Enter food: ")
+# while not food == "q":
+#     print(f"You like {food}")
+#     food=input("Enter food: ")
+# print("Bye!")
+
+
+# num=int(input("Enter a number between 1 and 10:"))
+# while num <1 or num>10:
+#     print(f"{num} is not between 1 and 10")
+#     num=int(input("Enter a number between 1 and 10: "))
+# print(f"your number is {num}")
+
+# for num in [2, 4, 6, 8]:
+#     print(num)
+
+# num=2
+# while num <= 8:
+#     print(num)
+#     num+=2
+
+# for num in range(5):
+#     print(num)
+
+# num=0
+# while num <5:
+#     print(num)
+#     num+=1
+
+# start=int(input("Enter start: "))
+# end=int(input("Enter end: "))
+# step=int(input("Enter step: "))
+# for num in range(start,end+1,step):
+#     print(num)
+
+
+# start=int(input("Enter start: "))
+# end=int(input("Enter end: "))
+# step=int(input("Enter step: "))
+# count=start
+# while count<end:
+#     print(count)
+#     count+=step
+
+# count=0
+# total=0
+
+# while count<=10:
+#     grade=int(input(f"Enter grade for student {count}"))
+#     total+=grade
+#     count+=1
+# average=total/10
+# print(f"Total: {total}")
+# print(f"Average: {average}")
+
+
+count = 1
+total = 0
+count_exp = 0
+count_cheap = 0
+
+#while count <= 3:
+for num in range(1,4):
+    sales = float(input("Enter sales: "))
+    total = total + sales
+    count = count + 1
+    if sales > 50:
+        count_exp += 1
+    elif sales > 0:
+        count_cheap += 1
+    else:
+        print("Error! sales cannot be negative")
+        total = total - sales
+        count = count -1
+    
+
+average = total / 3
+print("Total: ",total)
+print("Average: ",average)

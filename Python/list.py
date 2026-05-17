@@ -277,79 +277,280 @@
 #This program reads prices and print statistics 
 
 
-#Read prices and return prices list   
-def read_prices(num_prices):
-    prices=[0]*num_prices
-    for n in range(0, num_prices):
-        prices[n]= int(input(f"Prices for item #{n+1}? "))
-    return prices
+# #Read prices and return prices list   
+# def read_prices(num_prices):
+#     prices=[0]*num_prices
+#     for n in range(0, num_prices):
+#         prices[n]= int(input(f"Prices for item #{n+1}? "))
+#     return prices
     
-#function to calculate and return average of numbers in the list
-def get_average(numbers):
-    total=0
-    for n in numbers:
-        total +=n
-    average = total / len(numbers)
-    return average
-    
-
-#function to get maximum value in the list
-def get_maximum(numbers):
-    maximum = numbers[0]
-    for n in numbers:
-        if n > maximum:
-            maximum = n
-    return maximum
-    
-#function to get minimum value in the list
-def get_minimum(numbers):
-    minimum = numbers[0]
-    for n in numbers:
-        if n < minimum:
-            minimum = n
-    return minimum
-    
-#function to get price of a given number in the list
-def get_item_price(prices, item_number):
-    if item_number < 1 or item_number >len(prices):
-        return -1
-    return prices[item_number-1]
+# #function to calculate and return average of numbers in the list
+# def get_average(numbers):
+#     total=0
+#     for n in numbers:
+#         total +=n
+#     average = total / len(numbers)
+#     return average
     
 
-#function to get the count of expensive items above average
-def get_count_expensive(item_prices):
-    avg =get_average(item_prices)
-    count=0
+# #function to get maximum value in the list
+# def get_maximum(numbers):
+#     maximum = numbers[0]
+#     for n in numbers:
+#         if n > maximum:
+#             maximum = n
+#     return maximum
     
-    for price in item_prices:
-        if price > avg:
-            count +=1
-    return count
+# #function to get minimum value in the list
+# def get_minimum(numbers):
+#     minimum = numbers[0]
+#     for n in numbers:
+#         if n < minimum:
+#             minimum = n
+#     return minimum
+    
+# #function to get price of a given number in the list
+# def get_item_price(prices, item_number):
+#     if item_number < 1 or item_number >len(prices):
+#         return -1
+#     return prices[item_number-1]
+    
 
-def main():
-    item_size=int(input("How many items? "))
+# #function to get the count of expensive items above average
+# def get_count_expensive(item_prices):
+#     avg =get_average(item_prices)
+#     count=0
     
-    #Calling functions to get results
-    item_prices=read_prices(item_size)
-    
-    print(item_prices)
-    
-    avg =get_average(item_prices)
-    maximum = get_maximum(item_prices)
-    minimum = get_minimum(item_prices)
-    price_range = maximum - minimum
-    
-    #Print the results
-    print(f"Average price: {avg}")
-    print(f"Maximum price: {maximum}")
-    print(f"Minimum price: {minimum}")
-    print(f"Range of prices: {price_range}")
-    
-    item_num=int(input("Enter item number: "))
-    price= get_item_price(item_prices, item_num)
-    print(f"Item #{item_num} price: {price}")
-    
-    count_expensive = get_count_expensive(item_prices)
-    print(f"Count expensive: {count_expensive}")
+#     for price in item_prices:
+#         if price > avg:
+#             count +=1
+#     return count
 
-main()
+# def main():
+#     item_size=int(input("How many items? "))
+    
+#     #Calling functions to get results
+#     item_prices=read_prices(item_size)
+    
+#     print(item_prices)
+    
+#     avg =get_average(item_prices)
+#     maximum = get_maximum(item_prices)
+#     minimum = get_minimum(item_prices)
+#     price_range = maximum - minimum
+    
+#     #Print the results
+#     print(f"Average price: {avg}")
+#     print(f"Maximum price: {maximum}")
+#     print(f"Minimum price: {minimum}")
+#     print(f"Range of prices: {price_range}")
+    
+#     item_num=int(input("Enter item number: "))
+#     price= get_item_price(item_prices, item_num)
+#     print(f"Item #{item_num} price: {price}")
+    
+#     count_expensive = get_count_expensive(item_prices)
+#     print(f"Count expensive: {count_expensive}")
+
+# main()
+
+
+############################print the sum of even numbers
+# def get_sum_even(input_list):
+    
+#     output = 0
+#     for n in input_list:
+#         even_list=[]
+#         if n % 2 == 0:
+#             # even_list[n-1]=n
+#             # print(even_list)
+#             output = output + n
+#     return output
+
+# def main():
+#     list_1 = [4,5,6,9,2,1,3,4]
+#     s = get_sum_even(list_1)
+    
+#     print("Sum even: ",s)
+
+# main()
+
+
+
+###################### multiplies all number at even positions by 2, and return the updated list.
+
+
+# def change_at_even(my_list):
+#     l = len(my_list)
+#     output = [0] * l
+    
+#     for pos in range(0,l):
+#         if pos %2 == 0:
+#             output[pos] = my_list[pos] * 2
+#         else:
+#             output[pos] = my_list[pos]
+        
+#     return output
+
+# def main():
+#     list_1 = [4,5,6,9,2,1,3,4]
+#     list_2 = change_at_even(list_1)
+    
+#     print("Input list: ",list_1)
+#     print("output list: ",list_2)
+    
+
+# main()
+
+
+#################
+# def add_lists(list_1,list_2):
+    
+#     l = len(list_1)
+#     output_list = [0] * l
+    
+#     for pos in range(0,l):
+#         output_list[pos] = list_1[pos] + list_2[pos]
+    
+#     return output_list
+    
+# def main():
+#     list_1 = [4,5,6,9,2,1,3,4]
+#     list_2 = [2,3,4,5,6,7,8,9]
+#     list_3 = add_lists(list_1,list_2)
+    
+#     print("Input list 1: ",list_1)
+#     print("Input list 2: ",list_2)
+#     print("Output list 2: ",list_3)
+    
+
+# main()
+
+
+# numbers = [89,67,80,34,55]
+
+# index = 0
+# while index <= 4:
+#     num = numbers[index]
+#     if numbers[index] %2 == 1:
+#         print(num)
+#     index = index + 1
+
+
+# def change_at_even(my_list):
+#     l = len(my_list)
+#     output = [0] * l
+    
+#     for pos in range(0,l):
+#         if pos %2 == 0:
+#             output[pos] = my_list[pos] * 2
+#         else:
+#             output[pos] = my_list[pos]
+        
+#     return output
+
+# def main():
+#     list_1 = [4,5,6,9,2,1,3,4]
+#     list_2 = change_at_even(list_1)
+    
+#     print("Input list: ",list_1)
+#     print("output list: ",list_2)
+    
+
+# main()
+
+# def add_lists(list_1,list_2):
+    
+#     l = len(list_1)
+#     output_list = [0] * l
+    
+#     for pos in range(0,l):
+#         output_list[pos] = list_1[pos] + list_2[pos]
+    
+#     return output_list
+    
+# def main():
+#     list_1 = [4,5,6,9,2,1,3,4]
+#     list_2 = [2,3,4,5,6,7,8,9]
+#     list_3 = add_lists(list_1,list_2)
+    
+#     print("Input list 1: ",list_1)
+#     print("Input list 2: ",list_2)
+#     print("Output list 2: ",list_3)
+    
+
+# main()
+
+
+# my_string = "Hello there!"
+
+# count = 0
+# for ch in my_string:
+#     ch="x"
+#     print(ch)
+#     # ch = "X"
+
+# print(my_string)
+
+
+# full_name="Assefa Tadesse Altaye"
+# name=full_name.strip()
+# middle_name=full_name[7:14]
+# print(name)
+# print(middle_name)
+
+# def upper_word(in_text, in_word):
+
+#     words = in_text.split()
+#     print(words)
+#     count_words = len(words)
+#     in_word = in_word.upper()
+#     for i in range(0,count_words):
+#         if words[i].upper() == in_word:
+#             words[i] = words[i].upper()
+
+#     output_string = ""
+#     for word in words:
+#         output_string = output_string + word + " "
+
+#     return output_string
+
+# def main():
+#     your_text = input("Enter text: ")
+#     your_word = input("Enter word: ")
+    
+#     new_text = upper_word(your_text,your_word)
+#     print(new_text)
+
+# main()
+
+
+# card_num = input('Enter credit card number: ')
+
+# exp_date = input('Enter expiration date with two digits for the month and two digits for the year, as in 0924: ')
+
+
+# length = len(card_num)
+# last_four = card_num[length-4:length]
+# month = exp_date[0:2]
+# year = exp_date[2:5]
+
+# print(f'The last four digits of your number are {last_four}.')
+# print(f'The card expiration date is {month} / 20{year}.')
+
+
+# input_text = input("Enter text: ")
+
+# for ch in input_text:
+#     if ch.isdigit():
+#         input_text = input_text.replace(ch,"X")
+
+# print(input_text)
+
+
+my=[10, 1, 8, 3, 5]
+total=0
+for i in my:
+    print(i)
+#     total+=i
+# print(total)
