@@ -10,5 +10,7 @@ public class ReadKeyBoard {
         y=sc.nextInt();
         int z= x+y;
         System.out.println("Sum of two numbers is: " + z);
+        int _value$=23;
+        System.out.println(_value$);
     }
 }
