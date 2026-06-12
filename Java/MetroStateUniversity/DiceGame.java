@@ -1,55 +1,83 @@
-import java.util.Random;
-import java.util.Scanner;
-public class DiceGame {
-    public static void main(String[] args) {
-    Scanner scanner =new Scanner(System.in);
-    Random random =new Random();
-    String banner = """
-                         ____
-                        /'  .\\    _____
-                       /: \\___\\  / .  /\\
-                       \\' / . / /____/..\\
-                        \\/___/  '  '\\  /
-                                 '__'\\/
-        """;
-    System.out.println(banner);
-    System.out.println("You are given $250 to start with\n"+
-                            "You can't play once you are out of money");
-    int balance=250;
-    //Generate two random numbers and print them out.
-    int randomNumber1=random.nextInt(1,7);
-    int randomNumber2=random.nextInt(1,7);
+// import java.util.Random;
+// import java.util.Scanner;
+// public class DiceGame {
+//     public static void main(String[] args) {
+//     Scanner scanner =new Scanner(System.in);
+//     Random random =new Random();
+//     String banner = """
+//                          ____
+//                         /'  .\\    _____
+//                        /: \\___\\  / .  /\\
+//                        \\' / . / /____/..\\
+//                         \\/___/  '  '\\  /
+//                                  '__'\\/
+//         """;
+//     System.out.println(banner);
+//     System.out.println("You are given $250 to start with\n"+
+//                             "You can't play once you are out of money");
+//     int balance=250;
+//     //Generate two random numbers and print them out.
+//     int randomNumber1=random.nextInt(1,7);
+//     int randomNumber2=random.nextInt(1,7);
     
-    //Let the user play a single round
-    
-    int betAmount=-1;
-    boolean isValidDigit=false;
+//     //Let the user play a single round
+//     //Input validation for betAmount
+//     int betAmount=-1;
+//     boolean isValidDigit=false;
 
 
-    while (betAmount<0 || betAmount>balance || !isValidDigit){
-        System.out.print("How much are you betting? ");
-        String input =scanner.next();
+//     while (betAmount<0 || betAmount>balance || !isValidDigit){
+//         System.out.print("How much are you betting? ");
+//         String input =scanner.next();
 
-        isValidDigit=true;
+//         isValidDigit=true;
 
        
-        for (int i = 0; i < input.length(); i++) {
-                if (!Character.isDigit(input.charAt(i))) {
-                    isValidDigit = false; // Found a non-digit character (like 'a' or 'b')
-                    break; // Stop checking the rest of the string
-                }
-            }
+//         for (int i = 0; i < input.length(); i++) {
+//                 if (!Character.isDigit(input.charAt(i))) {
+//                     isValidDigit = false; // Found a non-digit character (like 'a' or 'b')
+//                     break; // Stop checking the rest of the string
+//                 }
+//             }
 
-        if(isValidDigit){
-            betAmount=Integer.parseInt(input);
-            System.out.println(betAmount);
-        }
-        
-    }
+//         if(isValidDigit){
+//             betAmount=Integer.parseInt(input);
+//             System.out.println(betAmount);
+//         }
+//     balance-=betAmount;
+//     }
+    
+//     System.out.println(balance);
+//     System.out.println("Rolling the dice...");
+    
+//     //Input validation for sumGuess
 
-    System.out.println("Rolling the dice...");
-    System.out.print("What is the sum of the two dice? ");
-    int sumGuess=scanner.nextInt();
+//     int sumGuess=-1;
+//     boolean isValidSum=false;
+//     while (sumGuess<2 || sumGuess>12 || !isValidSum){
+//         System.out.print("What is the sum of the two dice? ");
+//         String sumInput=scanner.next();
+
+//         isValidSum=true;     
+//         for (int i = 0; i < sumInput.length(); i++) {
+//                 if (!Character.isDigit(sumInput.charAt(i))) {
+//                     isValidSum = false; // Found a non-digit character (like 'a' or 'b')
+//                     break; // Stop checking the rest of the string
+//                 }
+//             }
+
+//         if(isValidSum){
+//             sumGuess=Integer.parseInt(sumInput);
+//             System.out.println(sumGuess);
+//         }else{
+//             sumGuess=-1;
+//         }
+//     }
+
+
+    
+    
+    
     //Apply the rules so the balance is updated correctly.
     
     //Let the user play an unlimited number of rounds
@@ -57,9 +85,143 @@ public class DiceGame {
     //Deal with the case when the user is out of money
     //Add file writing
     //Add input validation
-    scanner.close();    
-    }
+//     scanner.close();    
+//     }
     
+// }
+
+//This program runs a dice game 
+import java.util.Scanner;
+import java.util.Random;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
+
+public class DiceGame{
+    public static void main(String [] args) throws IOException{
+        //throws IOException;
+        Scanner scanner=new Scanner(System.in);
+        Random random=new Random();
+        
+        //Print the dice banner
+        System.out.println("Welcome to Dice Game");
+        String banner = "                 ____\n" +
+                        "                /'  .\\    _____\n" +
+                        "               /: \\___\\  / .  /\\\n" +
+                        "               \\' / . / /____/..\\\n" +
+                        "                \\/___/  '   '\\  /\n" +
+                        "                         '___'\\/\n";
+
+        System.out.println(banner);
+        System.out.println("You are given $250 to start with\n"+
+                            "You can't play once you are out of money");
+        int balance=250;
+        //Generate two random numbers and print them out.
+        //int randomNumber1=random.nextInt(1,7);
+        //int randomNumber2=random.nextInt(1,7);
+        
+        
+        //Let the user play a single round
+        int betAmount=-1;
+        boolean isValidDigit=false;
+        
+        while (!isValidDigit || betAmount<0 || betAmount>balance){
+            System.out.print("How much are you betting? ");
+            String input=scanner.next();
+            
+            isValidDigit=true;
+            
+            for (int i=0; i< input.length(); i++){
+                if(!Character.isDigit(input.charAt(i))){
+                    isValidDigit=false;
+                    break;
+                }
+            }
+            
+            if (isValidDigit){
+                betAmount=Integer.parseInt(input);
+            }
+        }
+        
+        //Update balance
+       // balance-=betAmount;
+        
+        System.out.println("Rolling the dice...");
+        //Generate two random numbers and print them out.
+        int die1=random.nextInt(1,7);
+        int die2=random.nextInt(1,7);
+        //die1=3;
+        //die2=1;
+        //Input validation for sumGuess
+        int sumGuess=-1;
+        boolean isValidSum=false;
+        
+        while (!isValidSum || sumGuess<2 || sumGuess>12){
+            System.out.print("What is the sum of the two dice? ");
+            String sumInput=scanner.next();
+            
+            isValidSum=true;
+            
+            for (int i=0; i< sumInput.length(); i++){
+                if(!Character.isDigit(sumInput.charAt(i))){
+                    isValidSum=false;
+                    break;
+                }
+            }
+            
+            if (isValidSum){
+                sumGuess=Integer.parseInt(sumInput);
+            }else{
+                sumGuess=-1;
+            }
+        }
+        
+        System.out.println("Die 1 is "+die1);
+        System.out.println("Die 2 is "+die2);
+        
+        //Apply the rules so the balance is updated correctly.
+        int winningAmount=0;
+        int lossAmount=0;
+        int rollSum=die1+die2;
+        if ((sumGuess==rollSum) && (die1==die2)){
+            winningAmount=betAmount*4;
+            System.out.println("You won $"+winningAmount);
+            balance+=winningAmount;
+            System.out.println("Your current balance is $"+ balance);
+        }else if ((sumGuess==rollSum) && (die1!=die2)){
+            winningAmount=betAmount;
+            System.out.println("You won $"+winningAmount);
+            balance+=winningAmount;
+            System.out.println("Your current balance is $"+ balance);
+        }else{
+            lossAmount=betAmount;
+            System.out.println("You lost $"+lossAmount);
+            balance-=lossAmount;
+            System.out.println("Your current balance is $"+ balance);
+        }
+        
+        //Deal with the case when the user is out of money
+        if (balance==0){
+            System.out.println("You lost $"+lossAmount);
+            System.out.println("Your current balance is $"+ balance);
+            System.out.println("Sorry, you are out of money. \nSee you later");
+        }
+        
+        
+        //Let the user play an unlimited number of rounds
+        //Prompts user whether to continue
+        
+        //Add file writing
+        FileWriter fileWriter=new FileWriter("gameResult.txt", true);
+        PrintWriter printWriter=new PrintWriter(fileWriter);
+        
+        printWriter.println("sum\tguess\tbalance");
+        printWriter.println(sumGuess + "\t" + rollSum + "\t" + balance);
+        
+        scanner.close();
+        printWriter.close();
+        fileWriter.close();
+    }
 }
 
 
