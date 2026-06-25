@@ -6,7 +6,7 @@ public class DataType {
     public static void main(String[] args){
         float subTotal;
         double tax, total;
-        
+
             Scanner scan =new Scanner(System.in);
             System.out.print("Enter price for item 1:");
             float price_1=scan.nextFloat();
@@ -14,21 +14,22 @@ public class DataType {
             float price_2=scan.nextFloat();
             System.out.print("Enter price for item 3:");
             float price_3=scan.nextFloat();
-            
+
             System.out.println("----------------------");
             System.out.println("Item 1\t= $" +price_1);
             System.out.println("Item 2\t= $" +price_2);
             System.out.println("Item 3\t= $" +price_3);
             System.out.println("----------------------");
-            
+
             subTotal=price_1 + price_2 +price_3;
             System.out.println("Subtotal= $" + subTotal);
             tax=subTotal*0.07;
             System.out.println("Tax \t= $" + tax);
-            
+
             total= subTotal + tax;
             System.out.println("Total \t= $" + total);
-        scan.close();   
+        scan.close();
+
     }
 }
 
