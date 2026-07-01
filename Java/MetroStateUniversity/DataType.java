@@ -6,6 +6,11 @@ public class DataType {
     public static void main(String[] args){
         float subTotal;
         double tax, total;
+        int num1=0;
+        int num2=0;
+        double result=0;
+
+        System.out.printf("Result: %d + %d = %.2f\n", num1, num2, result);
 
             Scanner scan =new Scanner(System.in);
             System.out.print("Enter price for item 1:");
