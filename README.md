@@ -1,6 +1,6 @@
 # 🚀 Playground
 
-Welcome to **Playground** — my personal coding laboratory where I explore, practice, and experiment with different programming languages, frameworks, and software development concepts.
+Welcome to my **Playground** — my personal coding laboratory where I explore, practice, and experiment with different programming languages, frameworks, and software development concepts.
 
 This repository serves as a collection of learning exercises, coding challenges, small projects, proof-of-concepts, and technology experiments that help me strengthen my skills as a software engineer.
 
