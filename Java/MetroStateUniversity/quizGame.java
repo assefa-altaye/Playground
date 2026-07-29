@@ -34,7 +34,7 @@ public class quizGame {
 
             int correctAnswer=eval(op, left, right);
             if (result==correctAnswer){
-                System.out.println("Yout got it");
+                System.out.println("You got it");
                 totalAnswer++;
             }
             else{
