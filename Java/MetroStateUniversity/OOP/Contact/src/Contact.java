@@ -23,7 +23,7 @@ class Contact {
     public void setFirstName(){
         this.firstName=firstName;
     }
-    public void setLastName(){
+    public void setLastName(String next){
         this.lastName=lastName;
     }
 

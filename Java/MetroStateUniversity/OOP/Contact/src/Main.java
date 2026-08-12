@@ -15,6 +15,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+        //System.out.print("A)dd S)earch U)pdate L)ist E)xit:");
         loop: while(true){
             System.out.print("A)dd S)earch U)pdate L)ist E)xit:");
             String choice = s.nextLine();
@@ -40,31 +41,47 @@ public class Main {
         }
     }
 
-    //if contact is full, print "Out of memory"
-    //otherwise, prompt for email, first, last name
-    //if email does not exist, add contact
     static void add(){
+        //if contact is full, print "Out of memory"
+        //otherwise, prompt for email, first, last name
+        //if email does not exist, add contact
         if(count >= CAPACITY){
             System.out.println("Out of memory");
+        }
+        System.out.print("Email: ");
+        String email=s.nextLine();
+
+        if(contains(email)){
+            System.out.println("Email already exist!");
             return;
         }
+        System.out.print("First: ");
+        String firstName=s.nextLine();
+        System.out.print("Last: ");
+        String lastName=s.nextLine();
 
-        System.out.println("Email: ");
-        String email=s.next();
-        //I have to check if the email does not exist==>use contains method
-        System.out.println("First: ");
-        String firstName=s.next();
-        System.out.println("Last: ");
-        String lastName=s.next();
-
+        contacts[count]=new Contact(firstName, lastName, email);
+        count++;
     }
 
 
     static void search(){
         //prompt for email
+        System.out.println("Email to search: ");
+        //String email=s.nextLine.trim();
+        String email=s.next();
         //search the list of contacts
         //if found, print the first and last name
         //otherwise, print that email is not found.
+        for(int i=0; i<count; i++){
+            if(contacts[i].getEmail().equalsIgnoreCase(email)){
+                System.out.println("Found: "+contacts[i].getEmail()+ " "
+                        + contacts[i].getFirstName()+ " "+contacts[i].getLastName());
+                return;
+            }
+        }
+        System.out.println(email + " NOT FOUND!");
+
     }
 
     static boolean contains(String email){
@@ -77,14 +94,33 @@ public class Main {
         }
         return false;
     }
+
     static void list(){
         //print the list of contacts.
+        System.out.printf("%-30s %-15s %-15s\n", "EMAIL", "FIRST", "LAST");
+        for(int i=0; i<count; i++){
+            System.out.printf("%-30s %-15s %-15s\n",
+                    contacts[i].getEmail(),
+                    contacts[i].getFirstName(),
+                    contacts[i].getLastName());
+        }
     }
 
     static void update(){
+        System.out.println("Email: ");
+        String email=s.next();
+        for(int i=0; i<count; i++){
+            if(contacts[i].getEmail().equalsIgnoreCase(email)){
+                System.out.println("First: ");
+                contacts[i].setFristName(s.next());
+
+                System.out.println("Last: ");
+                contacts[i].setLastName(s.next());
+                return;
+            }
+        }
+        System.out.println("No such email found.");
 
     }
-
-
 
 }
