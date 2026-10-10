@@ -1,0 +1,20 @@
+1	Single_Family	4	2
+2	Office_Space	0	true
+3	Shopping_Mall	0
+1	Apartment	2	1
+2	Retail_Store	0	false
+3	Storage_Unit	0
+1	Townhouse	3	1
+2	Warehouse	0	true
+3	Shopping_Mall	0
+1	Condo	2	1
+2	Office_Space	0	false
+3	Office_Space	0
+1	Single_Family	3	2
+2	Shopping_Mall	0	true
+3	Shopping_Mall	0
+1	Apartment	2	1
+1	Single_Family	4	2
+2	Office_Space	0	true
+1	Single_Family	5	3
+2	Restaurant	0	true
