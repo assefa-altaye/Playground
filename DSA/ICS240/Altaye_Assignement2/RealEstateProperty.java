@@ -46,4 +46,6 @@ public class RealEstateProperty implements Comparable<RealEstateProperty>{
         }
         return this.bedRooms.compareTo(o.getBedRooms());
     }
+
+    //Assignment 3
 }
